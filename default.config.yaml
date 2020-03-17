@@ -1,0 +1,31 @@
+## name of the bot (this is not used for anything at the moment)
+name: bot
+
+## path to secrets file
+secrets: secrets.yaml
+
+## directory cotaining your images
+image_dir: media
+
+## text description of your toot. Note: do not put tags here, use default_tags
+default_desc:
+
+## default tags of your toot
+default_tags: "#bot"
+
+## a key-value db with per-image detailed descriptions 
+infodb: info.pickledb
+
+## either random or seq.
+## random: files are picked randomly from the image_dir
+## seq: next file name by alphabetical order is picked every time script is run
+order: seq
+
+## if true add an extra tag #gif and #video when these are posted
+add_media_format_tag: true
+
+## if true add a Content Warning to the toot
+sensitive: false
+
+## Toot visibility ('public', 'unlisted', 'private', or 'direct')
+toot_visibility: public
