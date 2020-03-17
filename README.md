@@ -43,9 +43,9 @@ This will post the next image and return immediately.
 ## Info-DB
 Info-DB is an optional feature. The image does not need to have an entry in the Info-DB to be posted.
 It is a json file with list of items as follows
-```json
+```jsonc
 {
-    // item 1
+    // item #1
     "relative/path/to/file.jpg": {
         "id": 1,
         "desc": "Description",
@@ -56,11 +56,11 @@ It is a json file with list of items as follows
             "http://source/url/2"
         ]
     },
-    // item 2
+    // item #2
     "relative/path/to/other/file.jpg": {
-        ...
+        //...
     },
-    ...
+    //...
 }
 ```
 All fields in an item are optional. `source` may contain arbitrary number of strings. Multiple source entries are concatenated with '|'.
