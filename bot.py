@@ -104,7 +104,7 @@ class ImageEnumeratorBase:
     @staticmethod
     def get_file_list(image_dir):
         file_list = []
-        for root, dirs, files in os.walk(image_dir):
+        for root, _, files in os.walk(image_dir):
             for file in files:
                 file_list.append(os.path.join(root, file))
         return file_list
@@ -122,6 +122,7 @@ class RandomImageEnumerator(ImageEnumeratorBase):
 class SequentialImageEnumerator(ImageEnumeratorBase):
     def __init__(self, image_dir):
         super().__init__(image_dir)
+        self.image_list.sort(key=str.casefold)
     def get(self) -> str:
         choice = self.image_list[0] if len(self.image_list) > 0 else None
         print('selected file by order %s'%choice)
