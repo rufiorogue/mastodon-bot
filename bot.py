@@ -157,7 +157,7 @@ def resize_if_needed(image_path):
 def extract_tags_from_path(image_dir:str, image_path:str) -> str:
     path_relative_to_image_dir = os.path.dirname(os.path.relpath(image_path, image_dir)).replace('/', '\n').replace(' ', '\n')
     tags = path_relative_to_image_dir.split('\n')
-    tags = ['#' + x for x in tags]
+    tags = ['#' + x for x in tags if x and not x.isspace()]
     return join_str(' ', tags)
 
 
