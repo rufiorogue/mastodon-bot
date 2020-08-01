@@ -69,7 +69,7 @@ class InfoDb:
                 l_img_source:list = d_image_info['source']
                 src_joined:str = ''
                 if l_img_source and len(l_img_source):
-                    src_joined = 'Source: ' + join_str('|', l_img_source)
+                    src_joined = 'Source: ' + join_str(' | ', l_img_source)
                 return join_str('\n', (img_desc, src_joined))
             else:
                 print(image_path, 'not in infodb')
