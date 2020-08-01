@@ -114,7 +114,7 @@ class RandomImageEnumerator(ImageEnumeratorBase):
     def __init__(self, image_dir):
         super().__init__(image_dir)
     def get(self) -> str:
-        choice = random.choice(self.image_list)
+        choice = random.choice(self.image_list) if len(self.image_list) > 0 else None
         print('randomly selected file %s'%choice)
         return choice
 
@@ -180,6 +180,9 @@ def main():
         die()
 
     image_path:str = image_provider.get()
+    if image_path is None:
+        print('failed to obtain next image in the sequence')
+        die()    
 
     if image_path != None:
         desc:str = config['default_desc'] if config['default_desc'] else ''
