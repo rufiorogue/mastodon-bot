@@ -35,7 +35,7 @@ def load_yaml_file(file_path):
     except:
         print('failed to load %s'%file_path)
         die()
-    return yaml.load(f.read())
+    return yaml.safe_load(f.read())
 
 
 class ServerComm:
